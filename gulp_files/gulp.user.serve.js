@@ -125,7 +125,7 @@ function startBrowserSync(isDev, specRunner, config, browserSync, port, gulp, ar
         injectChanges: true,
         logFileChanges: true,
         logLevel: 'info',
-        logPrefix: 'zero',
+        logPrefix: 'suarez',
         notify: true,
         reloadDelay: 0 //1000
     };

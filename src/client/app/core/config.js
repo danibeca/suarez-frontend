@@ -11,8 +11,8 @@
     }
 
     var config = {
-        appErrorPrefix: '[Zero Error] ',
-        appTitle: 'Zero'
+        appErrorPrefix: '[Suarez Error] ',
+        appTitle: 'Suarez Custom'
     };
 
     core.value('config', config);
