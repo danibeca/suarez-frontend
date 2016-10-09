@@ -10,4 +10,21 @@
         <a class="item">{{ 'HELP' | translate }}</a>
     </div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
+    <table class="table table-striped tabla-app">
+        <tbody>
+        <tr ng-repeat="product in vm.products">
+            <td class="">{{ product.name }}</td>
+        </tr>
+        <tr>
+            <td>{{ vm.title }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <p></p>

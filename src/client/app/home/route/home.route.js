@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -12,7 +12,6 @@
 
 
     function getStates() {
-
         return [
             {
                 state: 'home',
@@ -23,8 +22,17 @@
                     controllerAs: 'vm',
                     title: 'home',
                     resolve: {
-                        translations:  function(translateHelper) {
+                        translations: function (translateHelper) {
                             return translateHelper.addParts('home');
+                        },
+                        sports: function (Restangular) {
+                            return Restangular.all('sports').getList();
+                        },
+                        categories: function (Restangular) {
+                            return Restangular.service('categories', Restangular.one('sports', 1)).getList();
+                        },
+                        products: function (Restangular) {
+                            return Restangular.service('products', Restangular.one('sports',1).one('categories',1)).getList();
                         }
                     }
                 }
