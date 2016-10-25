@@ -2,7 +2,9 @@
     'use strict';
 
     angular.module('blocks.translate', [
+        'blocks.storage',
         'pascalprecht.translate',
-        'ngCookies'
+        'ngCookies',
+        'blocks.router'
     ]);
 })();

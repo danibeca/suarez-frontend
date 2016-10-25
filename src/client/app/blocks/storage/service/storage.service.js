@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -11,6 +11,8 @@
             clear: clear,
             getJsonObject: getJsonObject,
             setJsonObject: setJsonObject,
+            get: get,
+            set: set
         };
 
         return service;
@@ -25,6 +27,14 @@
 
         function setJsonObject(name, object) {
             window.localStorage.setItem(name, JSON.stringify(object));
+        }
+
+        function get(name) {
+            return window.localStorage.getItem(name);
+        }
+
+        function set(name, variable) {
+            window.localStorage.setItem(name, variable);
         }
     }
 })();
