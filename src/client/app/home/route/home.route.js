@@ -32,7 +32,9 @@
                             return Restangular.service('categories', Restangular.one('sports', 1)).getList();
                         },
                         products: function (Restangular) {
-                            return Restangular.service('products', Restangular.one('sports',1).one('categories',1)).getList();
+                            return Restangular
+                                .service('products', Restangular.one('sports', 1).one('categories', 1))
+                                .getList();
                         }
                     }
                 }

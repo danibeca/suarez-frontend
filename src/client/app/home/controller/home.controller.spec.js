@@ -12,7 +12,7 @@ describe('HomeController', function() {
         $rootScope.$apply();
     });
 
-    bard.verifyNoOutstandingHttpRequests();
+
 
     describe('Home controller', function() {
         it('should be created successfully', function () {
