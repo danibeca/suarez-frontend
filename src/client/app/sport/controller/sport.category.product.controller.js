@@ -2,13 +2,14 @@
     'use strict';
 
     angular
-        .module('app.home')
-        .controller('HomeController', HomeController);
+        .module('app.sport')
+        .controller('SportCategoryProductController', SportCategoryProductController);
 
     /* @ngInject */
-    function HomeController(products) {
+    function SportCategoryProductController(category, products) {
         /*jshint unused:false*/
         var vm = this;
+        vm.category = category;
         vm.products = products;
         vm.title = 'Hola';
     }

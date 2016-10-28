@@ -7,3 +7,146 @@
     left:50%;
     .translate(-50%,-50%);
 }
+
+body {
+    background-color: #00a8e1;
+    color: #071e3e;
+    font-family: 'Pontano', Fallback, sans-serif;
+    font-size: 18px;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.col-image img{
+    max-width: 100%;
+}
+
+.topbar {
+    height: 45px;
+    text-align: right;
+    padding: 12px 0;
+}
+
+.navbar {
+    height: 100px;
+    border-radius: 0;
+    padding: 20px 0;
+    font-size: 15px;
+    margin: 0;
+}
+
+.navbar-darkblue {
+    background-color: #071e3e;
+    color: #00a8e1;
+}
+
+.navbar-darkblue a:hover {
+    background-color: #071e3e;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+.navbar-brand img{
+    width: 45%;
+}
+
+.breadcrumb {
+    border-radius: 0;
+    color: inherit;
+    background-color: inherit;
+    margin-bottom: 0;
+    padding: 15px;
+}
+
+.breadcrumb a {
+    color: inherit;
+}
+
+.breadcrumb>li+li:before {
+    color: #071e3e;
+}
+
+.breadcrumb .active {
+    color: inherit;
+    font-weight: bold;
+}
+
+.container-wide {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.view {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.view .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(7,30,62, 0.9); 
+    transition: all 0.4s ease-in-out;
+}
+
+.view img { 
+    transition: all 0.2s linear;
+}
+
+.mask img {
+    padding-top: 25%;
+}
+
+.view:hover img { 
+    transform: scale(1.1);
+}
+
+.view:hover .mask { 
+    opacity: 1;
+}
+
+.image-holder {
+    position: relative;
+}
+
+.image.holder img{
+    max-width: 100%;
+}
+
+.image-holder .caption {
+    position: absolute;
+    width: 100%;
+    padding: 40px;
+    bottom: 0px;
+    left: 0px;
+    color: #ffffff;
+    background-color: rgba(7,30,62, 0.9); 
+    text-align:left;
+    font-weight:bold;
+}
+
+.text-highlight {
+    background-color: #071e3e;
+    color: #00a8e1;
+    padding: 10px 40px;
+    line-height: 35px;
+}

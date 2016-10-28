@@ -6,10 +6,9 @@
         .controller('HomeController', HomeController);
 
     /* @ngInject */
-    function HomeController(products) {
+    function HomeController() {
         /*jshint unused:false*/
         var vm = this;
-        vm.products = products;
         vm.title = 'Hola';
     }
 })();

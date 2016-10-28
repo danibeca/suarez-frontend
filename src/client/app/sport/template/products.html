@@ -1,30 +1,19 @@
-<div class="ui top fixed menu">
-    <div class="item">
-        <img src="/images/logo.png">
-    </div>
-    <a class="item">{{ 'HOME' | translate }}</a>
-    <div class="right menu">
-        <a class="item" ng-click="changeLanguage('es')">{{ 'BUTTON_LANG_ES' | translate }}</a>
-        <a class="item" ng-click="changeLanguage('en')">{{ 'BUTTON_LANG_EN' | translate }}</a>
-        <a class="item" ui-sref="login">{{ 'LOGIN' | translate }}</a>
-        <a class="item">{{ 'HELP' | translate }}</a>
+<div class="row no-gutters">
+    <div class="col-md-12">
+        <div class="image-holder">
+            <img src="images/{{ vm.category.data.header }}" alt="" />
+            <div class="caption">{{ vm.category.data.description }}</div>
+        </div>
     </div>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<div class="container">
-    <table class="table table-striped tabla-app">
-        <tbody>
-        <tr ng-repeat="product in vm.products">
-            <td class="">{{ product.name }}</td>
-        </tr>
-        <tr>
-            <td>{{ vm.title }}</td>
-        </tr>
-        </tbody>
-    </table>
+
+<div class="row text-center">
+    <span class="text-uppercase text-highlight">Select the piece to customize</span>
 </div>
-<p></p>
+
+<div class="row no-gutters">
+    <div class="col-md-12 col-sm-12 col-xs-12 col-image text-center"
+            ng-repeat="product in vm.products">
+        <img src="images/{{ product.image }}">
+    </div>
+</div>

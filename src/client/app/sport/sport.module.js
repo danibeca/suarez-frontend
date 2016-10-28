@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('app.home', ['app.core']);
+    angular.module('app.sport', ['app.core']);
 
 })();

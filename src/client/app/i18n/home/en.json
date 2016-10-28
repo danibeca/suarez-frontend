@@ -4,5 +4,6 @@
   "HELP": "Help",
   "VARIABLE_REPLACEMENT": "Hi {{name}}",
   "BUTTON_LANG_ES": "Spanish",
-  "BUTTON_LANG_EN": "English"
+  "BUTTON_LANG_EN": "English",
+  "REGISTER": "Sign up"
 }

@@ -4,7 +4,8 @@
     angular.module('app', [
         'app.user',
         'app.home',
-        'app.dashboard'
+        'app.dashboard',
+        'app.sport'
     ]);
 
 })();

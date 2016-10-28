@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.home')
+        .module('app.sport')
         .run(appRun);
 
     /* @ngInject */
@@ -14,22 +14,55 @@
     function getStates() {
         return [
             {
-                state: 'home',
+                state: 'sports',
                 config: {
-                    url: '/',
-                    templateUrl: 'app/home/template/home.html',
-                    controller: 'HomeController',
+                    url: '/sports',
+                    templateUrl: 'app/sport/template/sports.html',
+                    controller: 'SportController',
                     controllerAs: 'vm',
-                    title: 'home',
+                    title: 'sports',
                     resolve: {
                         translations: function (translateHelper) {
                             return translateHelper.addParts('home');
                         },
                         sports: function (Restangular) {
                             return Restangular.all('sports').getList();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'sports/categories',
+                config: {
+                    url: '/sports/categories',
+                    templateUrl: 'app/sport/template/categories.html',
+                    controller: 'SportCategoryController',
+                    controllerAs: 'vm',
+                    title: 'categories',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
                         },
                         categories: function (Restangular) {
                             return Restangular.service('categories', Restangular.one('sports', 1)).getList();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'sports/categories/products',
+                config: {
+                    url: '/sports/categories/products',
+                    templateUrl: 'app/sport/template/products.html',
+                    controller: 'SportCategoryProductController',
+                    controllerAs: 'vm',
+                    title: 'products',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        },
+                        category: function (Restangular) {
+                            return Restangular.one('categories', 1).get();
                         },
                         products: function (Restangular) {
                             return Restangular

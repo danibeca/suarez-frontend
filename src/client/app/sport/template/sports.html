@@ -1,30 +1,11 @@
-<div class="ui top fixed menu">
-    <div class="item">
-        <img src="/images/logo.png">
-    </div>
-    <a class="item">{{ 'HOME' | translate }}</a>
-    <div class="right menu">
-        <a class="item" ng-click="changeLanguage('es')">{{ 'BUTTON_LANG_ES' | translate }}</a>
-        <a class="item" ng-click="changeLanguage('en')">{{ 'BUTTON_LANG_EN' | translate }}</a>
-        <a class="item" ui-sref="login">{{ 'LOGIN' | translate }}</a>
-        <a class="item">{{ 'HELP' | translate }}</a>
+<div class="row no-gutters">
+    <div class="col-md-3 col-sm-6 col-xs-12 col-image"
+            ng-repeat="sport in vm.sports">
+        <div class="view">
+            <img src="images/{{ sport.image }}">
+            <div class="mask" ui-sref="sports/categories">
+                <img src="images/{{ sport.icon }}" width="120">
+            </div>  
+        </div>
     </div>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<div class="container">
-    <table class="table table-striped tabla-app">
-        <tbody>
-        <tr ng-repeat="product in vm.products">
-            <td class="">{{ product.name }}</td>
-        </tr>
-        <tr>
-            <td>{{ vm.title }}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<p></p>
