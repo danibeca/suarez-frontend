@@ -1,0 +1,19 @@
+<div class="row no-gutters">
+    <div class="col-md-12">
+        <div class="image-holder">
+            <img src="images/{{ vm.category.data.header }}" alt="" />
+            <div class="caption">{{ vm.category.data.description }}</div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center">
+    <span class="text-uppercase text-highlight">Select the piece to customize</span>
+</div>
+
+<div class="row no-gutters">
+    <div class="col-md-12 col-sm-12 col-xs-12 col-image text-center"
+            ng-repeat="product in vm.products">
+        <img src="images/{{ product.image }}">
+    </div>
+</div>

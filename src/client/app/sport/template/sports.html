@@ -1,0 +1,11 @@
+<div class="row no-gutters">
+    <div class="col-md-3 col-sm-6 col-xs-12 col-image"
+            ng-repeat="sport in vm.sports">
+        <div class="view">
+            <img src="images/{{ sport.image }}">
+            <div class="mask" ui-sref="sports/categories">
+                <img src="images/{{ sport.icon }}" width="120">
+            </div>  
+        </div>
+    </div>
+</div>
