@@ -34,7 +34,7 @@
             {
                 state: 'sports/categories',
                 config: {
-                    url: '/sports/categories',
+                    url: '/sports/:id/categories',
                     templateUrl: 'app/sport/template/categories.html',
                     controller: 'SportCategoryController',
                     controllerAs: 'vm',
@@ -43,8 +43,8 @@
                         translations: function (translateHelper) {
                             return translateHelper.addParts('home');
                         },
-                        categories: function (Restangular) {
-                            return Restangular.service('categories', Restangular.one('sports', 1)).getList();
+                        categories: function (Restangular,  $stateParams) {
+                            return Restangular.service('categories', Restangular.one('sports', $stateParams.id)).getList();
                         }
                     }
                 }
