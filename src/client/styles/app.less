@@ -81,6 +81,11 @@ body {
     font-weight: bold;
 }
 
+.container {
+    width: 96%;
+    margin: 0 auto;
+}
+
 .container-wide {
     width: 100%;
     margin: 0;
@@ -94,6 +99,19 @@ body {
     text-align: center;
     cursor: pointer;
     width: 100%;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.view .main-img { 
+    transition: all 0.2s linear;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    max-width: none;
+    height: 500px;
 }
 
 .view .mask {
@@ -106,18 +124,6 @@ body {
     opacity: 0;
     background-color: rgba(7,30,62, 0.9); 
     transition: all 0.4s ease-in-out;
-}
-
-.view img { 
-    transition: all 0.2s linear;
-}
-
-.mask img {
-    padding-top: 25%;
-}
-
-.view:hover img { 
-    transform: scale(1.1);
 }
 
 .view:hover .mask { 
@@ -149,4 +155,10 @@ body {
     color: #00a8e1;
     padding: 10px 40px;
     line-height: 35px;
+}
+
+.helper-middle {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
