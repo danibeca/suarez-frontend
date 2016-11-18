@@ -1,11 +1,10 @@
 <div class="row no-gutters">
-    <div class="col-md-3 col-sm-6 col-xs-12 col-image"
+    <div class="col-lg-3 col-sm-6 col-xs-12 col-image"
             ng-repeat="category in vm.categories">
         <div class="view">
-            <img src="images/{{ category.image }}">
+            <img src="images/{{ category.icon }}" class="main-img">
             <div class="mask" ui-sref="sports/categories/products">
-                <p>{{ category.name }}</p>
-                <img src="images/{{ category.icon }}" width="120">
+                <span class="helper-middle"></span><img src="images/{{ category.icon }}" width="120">
             </div>  
         </div>
     </div>

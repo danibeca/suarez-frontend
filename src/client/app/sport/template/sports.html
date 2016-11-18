@@ -2,9 +2,9 @@
     <div class="col-md-3 col-sm-6 col-xs-12 col-image"
             ng-repeat="sport in vm.sports">
         <div class="view">
-            <img src="images/{{ sport.image }}">
-            <div class="mask" ui-sref="sports/categories({id: '{{ sport.id }}'})">
-                <img src="images/{{ sport.icon }}" width="120">
+            <img src="images/{{ sport.image }}" class="main-img">
+            <div class="mask" ui-sref="sports/lines({id: '{{ sport.id }}'})">
+                <span class="helper-middle"></span><img src="images/{{ sport.icon }}" width="120">
             </div>  
         </div>
     </div>

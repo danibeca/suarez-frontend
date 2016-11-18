@@ -32,6 +32,50 @@
                 }
             },
             {
+                state: 'sports/lines',
+                config: {
+                    url: '/sports/:id/lines',
+                    templateUrl: 'app/sport/template/lines.html',
+                    controller: 'SportLineController',
+                    controllerAs: 'vm',
+                    title: 'lines',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        },
+                        lines: function (Restangular, $stateParams) {
+                            return Restangular.service('lines', Restangular.one('sports', $stateParams.id)).getList();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'sports/categories/products',
+                config: {
+                    url: '/sports/:sport_id/categories/:category_id/products',
+                    templateUrl: 'app/sport/template/products.html',
+                    controller: 'SportCategoryProductController',
+                    controllerAs: 'vm',
+                    title: 'products',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        },
+                        line: function (Restangular, $stateParams) {
+                            return Restangular.one('lines', $stateParams.category_id).get();
+                        },
+                        category: function (Restangular, $stateParams) {
+                            return Restangular.one('categories', $stateParams.category_id).get();
+                        },
+                        products: function (Restangular, $stateParams) {
+                            return Restangular
+                                .service('products', Restangular.one('sports', $stateParams.sport_id).one('categories', $stateParams.category_id))
+                                .getList();
+                        }
+                    }
+                }
+            }
+            /*{
                 state: 'sports/categories',
                 config: {
                     url: '/sports/:id/categories',
@@ -48,30 +92,7 @@
                         }
                     }
                 }
-            },
-            {
-                state: 'sports/categories/products',
-                config: {
-                    url: '/sports/categories/products',
-                    templateUrl: 'app/sport/template/products.html',
-                    controller: 'SportCategoryProductController',
-                    controllerAs: 'vm',
-                    title: 'products',
-                    resolve: {
-                        translations: function (translateHelper) {
-                            return translateHelper.addParts('home');
-                        },
-                        category: function (Restangular) {
-                            return Restangular.one('categories', 1).get();
-                        },
-                        products: function (Restangular) {
-                            return Restangular
-                                .service('products', Restangular.one('sports', 1).one('categories', 1))
-                                .getList();
-                        }
-                    }
-                }
-            }
+            },*/
         ];
     }
 })();
