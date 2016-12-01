@@ -3,12 +3,12 @@
 
     angular
         .module('app.sport')
-        .controller('SportLineController', SportLineController);
+        .controller('SportLineProductController', SportLineProductController);
 
     /* @ngInject */
-    function SportLineController(lines) {
+    function SportLineProductController(products) {
         /*jshint unused:false*/
         var vm = this;
-        vm.lines = lines;
+        vm.products = products;
     }
 })();

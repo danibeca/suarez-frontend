@@ -10,7 +10,7 @@
         $rootScope.changeLanguage = function (langKey) {
             storage.set('lang', langKey);
             $state.go($state.current, {}, {reload: true});
-            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+            $rootScope.$on('$stateChangeSuccess', function () {
                 $translate.use(langKey);
             });
         };

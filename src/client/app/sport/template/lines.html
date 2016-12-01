@@ -3,7 +3,7 @@
             ng-repeat="line in vm.lines">
         <div class="view">
             <img src="images/{{ line.image }}" class="main-img">
-            <div class="mask" ui-sref="sports/categories/products({sport_id: '{{ line.sport.id }}', category_id: '{{ line.category.id }}'})">
+            <div class="mask" ui-sref="sports/lines/products({sport_id: '{{ line.sport.id }}', line_id: '{{ line.id }}'})">
                 <span class="helper-middle"></span><img src="images/{{ line.icon }}">
             </div>  
         </div>
