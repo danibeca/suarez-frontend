@@ -10,7 +10,5 @@
         /*jshint unused:false*/
         var vm = this;
         vm.lines = lines;
-        console.log(lines);
-        vm.title = 'Hola';
     }
 })();
