@@ -1,0 +1,49 @@
+<div class="row no-gutters">
+
+    <div class="row">
+        <div class="col-xs-5 col-xs-offset-1">
+
+            <div class="text-center">
+                <span class="text-uppercase text-highlight">Customize your color</span>
+            </div>
+
+            <div class="container-colors">
+                <span ng-repeat="color in vm.colors">
+                    <button class="btn-color" style="background-color: rgb({{ color.hexa[0] }}, {{ color.hexa[1] }}, {{ color.hexa[2] }})"
+                            ng-click="vm.selectColor(color.hexa[0], color.hexa[1], color.hexa[2])"
+                    ></button>
+                </span>
+            </div>
+
+            <div class="container-canvas" style="border-color: rgb({{ vm.selectedColor[0] }}, {{ vm.selectedColor[1] }}, {{ vm.selectedColor[2] }} )">
+                <div id='capa' ng-click="vm.fill($event)" class="main-mask" style="background-image: url(images/j1.png);"></div>
+                <div class="canvas" style="top: -{{ 450*($index+1) }}px" ng-repeat="piece in vm.pieces">
+                    <canvas id="canvasImg[{{ piece.id }}]" height="450" width="410"></canvas>
+                </div>
+            </div>
+
+            <div style="text-align: right; width: 410px; margin: 10px auto;">
+                <span>
+                    <button class="btn-color" ng-click="vm.set()"><i class="glyphicon glyphicon-tint"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="col-xs-5">
+
+            <div class="text-center">
+                <span class="text-uppercase text-highlight">Add specifications to your design </span>
+            </div>
+
+            <div class="container-colors">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label>Specifications</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <button type="button" class="text-highlight">Confirm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

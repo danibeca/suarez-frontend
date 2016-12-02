@@ -5,7 +5,8 @@
         'app.user',
         'app.home',
         'app.dashboard',
-        'app.sport'
+        'app.sport',
+        'app.custom'
     ]);
 
 })();
