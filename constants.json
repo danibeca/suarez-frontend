@@ -6,7 +6,7 @@
   },
   "production": {
     "environmentConfig": {
-      "api": "http://localhost/laravel/suarez/api"
+      "api": "http://app.suarezclothing.com/api"
     }
   }
 }
