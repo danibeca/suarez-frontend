@@ -1,47 +1,31 @@
 @import "mixins.less";
 @import "variables.less";
 
-.middle-page {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    .translate(-50%,-50%);
-}
-
+/* Layout */
 body {
-    background-color: #00a8e1;
+    background-color: #fff;
     color: #071e3e;
     font-family: 'Pontano', Fallback, sans-serif;
     font-size: 18px;
 }
 
-.row.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+header, footer {
+    background-color: #000;
+    color: #fff;
 }
 
-.row.no-gutters > [class^="col-"],
-.row.no-gutters > [class*=" col-"] {
-  padding-right: 0;
-  padding-left: 0;
+footer {
+    height: 300px;
+    padding: 50px;
 }
 
-.col-image img{
-    max-width: 100%;
+.main-logo {
+    display: block;
+    text-align: center;
 }
 
-.topbar {
-    height: 45px;
-    text-align: right;
-    padding: 12px 0;
-}
-
-.navbar {
-    height: 100px;
-    border-radius: 0;
-    padding: 20px 0;
-    font-size: 15px;
-    margin: 0;
+.main-logo img {
+    width: 300px;
 }
 
 .navbar-darkblue {
@@ -54,10 +38,24 @@ body {
 }
 
 .navbar-brand {
+    display: block;
+    float: none;
     padding: 0;
+    text-align: center;
 }
 .navbar-brand img{
     width: 45%;
+}
+
+/* Components */
+
+.header-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.header-image img {
+    max-width: 100%;
 }
 
 .breadcrumb {
@@ -80,6 +78,46 @@ body {
     color: inherit;
     font-weight: bold;
 }
+
+/* Helpers */
+
+.middle-page {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    .translate(-50%,-50%);
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.topbar {
+    height: 45px;
+    text-align: right;
+    padding: 12px 0;
+}
+
+.navbar {
+    height: 100px;
+    border-radius: 0;
+    padding: 20px 0;
+    font-size: 15px;
+    margin: 0;
+}
+
+.col-image img{
+    max-width: 100%;
+}
+
+
 
 .container {
     width: 96%;
@@ -200,4 +238,44 @@ body {
     height: 450px;
     width: 410px;
     position: relative;
+}
+
+
+/* -- HOME -- */
+.home-banner {
+    height: 230px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.home-banner-bg1 {
+    background-image: url(../images/home-bg1.png);
+}
+
+.home-banner-bg2 {
+    background-image: url(../images/home-bg2.png);
+}
+
+.home-banner-img {
+    display: block;
+    max-width: 50%;
+    margin: 20px auto;
+}
+
+.home-banner-cta {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+.home-contact {
+    height: 120px;
+    color: #000;
+    padding-top: 30px;
+}
+
+.home-contact p {
+    line-height: 60px;
+    font-size: 60px;
+    font-weight: bold;
 }

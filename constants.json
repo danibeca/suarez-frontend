@@ -1,7 +1,7 @@
 {
   "local": {
     "environmentConfig": {
-      "api": "http://localhost/laravel/suarez/api"
+      "api": "http://localhost/suarez/custom/api"
     }
   },
   "production": {

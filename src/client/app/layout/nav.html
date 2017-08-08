@@ -1,6 +1,6 @@
-<nav class="navbar navbar-darkblue">
+<nav class="navbar">
     <div class="container">
-        <div class="navbar-header">
+        <div>
             <!-- Collapsed Hamburger -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                 <span class="sr-only">Toggle Navigation</span>
@@ -10,13 +10,13 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="">
+            <a class="main-logo" href="">
                 <img src="images/logo-azul.png" title="suarezclothing.com" alt="suarezclothing.com">
             </a>
         </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" ng-hide="true">
                 <!-- Authentication Links -->
                 <li><a class="item" ui-sref="login">{{ 'LOGIN' | translate }}</a></li>
                 <li><a class="item" ui-sref="login">{{ 'REGISTER' | translate }}</a></li>
