@@ -10,6 +10,5 @@
         /*jshint unused:false*/
         var vm = this;
         vm.sports = sports;
-        console.log(vm.sports);
     }
 })();

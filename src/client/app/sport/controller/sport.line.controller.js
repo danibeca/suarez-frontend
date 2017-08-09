@@ -6,9 +6,11 @@
         .controller('SportLineController', SportLineController);
 
     /* @ngInject */
-    function SportLineController(lines) {
+    function SportLineController(lines, sport) {
         /*jshint unused:false*/
         var vm = this;
+        vm.sport = sport.data;
         vm.lines = lines;
+        console.log(vm.lines);
     }
 })();

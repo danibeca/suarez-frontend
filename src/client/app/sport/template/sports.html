@@ -18,7 +18,9 @@
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12 col-image"
                 ng-repeat="sport in vm.sports">
-            <div ui-sref="sports/lines({id: '{{ sport.id }}'})" class="image-holder" style="background-image: url(images/{{ sport.image }})">
+            <div ui-sref="sports/lines({id: '{{ sport.id }}'})" 
+                 class="pointer image-holder" 
+                 style="background-image: url(images/{{ sport.image }})">
                 <div class="caption">{{ sport.name }}</div>
             </div>
         </div>

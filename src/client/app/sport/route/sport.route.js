@@ -45,8 +45,32 @@
                         translations: function (translateHelper) {
                             return translateHelper.addParts('home');
                         },
+                        sport: function (Restangular, $stateParams) {
+                            return Restangular.one('sports', $stateParams.id).get();
+                        },
                         lines: function (Restangular, $stateParams) {
                             return Restangular.service('lines', Restangular.one('sports', $stateParams.id)).getList();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'sports/lines/categories',
+                config: {
+                    url: '/sports/:sport_id/lines/:line_id/categories',
+                    templateUrl: 'app/sport/template/categories.html',
+                    controller: 'SportLineCategoryController',
+                    controllerAs: 'vm',
+                    title: 'categories',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        },
+                        categories: function (Restangular, $stateParams) {
+                            return Restangular.service('categories', 
+                                                            Restangular.one('sports', $stateParams.sport_id)
+                                                            .one('lines', $stateParams.line_id)
+                                                        ).getList();
                         }
                     }
                 }
