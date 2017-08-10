@@ -71,6 +71,45 @@
                                                             Restangular.one('sports', $stateParams.sport_id)
                                                             .one('lines', $stateParams.line_id)
                                                         ).getList();
+                        },
+                        line: function (Restangular, $stateParams) {
+                            return Restangular.one('lines', $stateParams.line_id).get();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'sports/lines/categories/templates',
+                config: {
+                    url: '/category/:category_id/templates',
+                    templateUrl: 'app/sport/template/templates.html',
+                    controller: 'CategoryTemplateController',
+                    controllerAs: 'vm',
+                    title: 'templates',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        },
+                        templates: function (Restangular, $stateParams) {
+                            return Restangular.service('templates', Restangular.one('categories', $stateParams.category_id)).getList();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'designs',
+                config: {
+                    url: '/designs',
+                    templateUrl: 'app/sport/template/designs.html',
+                    controller: 'DesignController',
+                    controllerAs: 'vm',
+                    title: 'designs',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        },
+                        sports: function (Restangular) {
+                            return Restangular.all('sports').getList();
                         }
                     }
                 }

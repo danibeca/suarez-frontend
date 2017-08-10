@@ -1,11 +1,11 @@
 <div class="header-image">
-    <img src="images/{{ vm.line.header }}" class="main-img">
+    <img src="images/sports.png" class="main-img">
 </div>
 
 <ul class="breadcrumb">
     <li><a href="#">Home</a></li>
     <li><a href="#">Cycling</a></li>
-    <li class="active">Pro</li>
+    <li class="active">INSPIRATION CENTER</li>
 </ul>
 
 <div class="content">
@@ -15,14 +15,4 @@
         Pellentesque vitae auctor massa. Suspendisse posuere vitae turpis id pretium. 
         Sed eget dui et risus maximus ultricies eget nec sapien. Nam hendrerit varius sem, eget tincidunt odio. 
     </p>
-    <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12 col-image"
-                ng-repeat="category in vm.categories">
-            <div ui-sref="sports/lines/categories/templates({ category_id: '{{ category.id }}' })" 
-                 class="pointer image-holder image-holder-short" 
-                 style="background-image: url(images/{{ category.image }})">
-                <div class="caption">{{ category.name }}</div>
-            </div>
-        </div>
-    </div>
 </div>

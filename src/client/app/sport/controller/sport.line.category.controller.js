@@ -6,10 +6,10 @@
         .controller('SportLineCategoryController', SportLineCategoryController);
 
     /* @ngInject */
-    function SportLineCategoryController(categories) {
+    function SportLineCategoryController(categories, line) {
         /*jshint unused:false*/
         var vm = this;
-        console.log(categories);
+        vm.line = line.data;
         vm.categories = categories;
     }
 })();
