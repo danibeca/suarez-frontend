@@ -69,8 +69,8 @@
                         categories: function (Restangular, $stateParams) {
                             return Restangular.service('categories', 
                                                             Restangular.one('sports', $stateParams.sport_id)
-                                                            .one('lines', $stateParams.line_id)
-                                                        ).getList();
+                                                                        .one('lines', $stateParams.line_id))
+                                                        .getList();
                         },
                         line: function (Restangular, $stateParams) {
                             return Restangular.one('lines', $stateParams.line_id).get();
@@ -91,7 +91,9 @@
                             return translateHelper.addParts('home');
                         },
                         templates: function (Restangular, $stateParams) {
-                            return Restangular.service('templates', Restangular.one('categories', $stateParams.category_id)).getList();
+                            return Restangular.service('templates', 
+                                                            Restangular.one('categories', $stateParams.category_id))
+                                                        .getList();
                         }
                     }
                 }
@@ -115,6 +117,21 @@
                 }
             },
             {
+                state: 'contact',
+                config: {
+                    url: '/contact',
+                    templateUrl: 'app/sport/template/contact.html',
+                    controller: 'ContactController',
+                    controllerAs: 'vm',
+                    title: 'contact',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        }
+                    }
+                }
+            },
+            {
                 state: 'sports/lines/products',
                 config: {
                     url: '/sports/:sport_id/lines/:line_id/products',
@@ -127,10 +144,9 @@
                             return translateHelper.addParts('home');
                         },
                         products: function (Restangular, $stateParams) {
-                            return Restangular
-                                .service('products',
-                                    Restangular.one('lines', $stateParams.line_id))
-                                .getList();
+                            return Restangular.service('products', 
+                                                            Restangular.one('lines', $stateParams.line_id))
+                                                        .getList();
                         }
                     }
                 }
