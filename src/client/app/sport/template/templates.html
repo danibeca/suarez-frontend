@@ -1,12 +1,13 @@
 <div class="header-image">
-    <img src="images/sports.png" class="main-img">
+    <img src="images/{{ vm.category.header }}" class="main-img">
+    <img src="images/{{ vm.category.image_name }}" class="img-front">
 </div>
 
 <ul class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li><a href="#">Sport</a></li>
-    <li><a href="#">Line</a></li>
-    <li class="active">Category</li>
+    <li><a href="/">HOME</a></li>
+    <li><a href="#">SPORT</a></li>
+    <li><a href="#">LINE</a></li>
+    <li class="active">{{ vm.category.name }}</li>
 </ul>
 
 <div class="content">
@@ -19,9 +20,10 @@
     <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12 col-image text-center"
                 ng-repeat="template in vm.templates">
-            <a href="images/{{ template.pdf }}" target="_blank">
-                <img src="images/{{ template.preview }}" >
-            </a>
+            <span>
+                <h2>{{ template.name }}<a class="pdf-download" href="images/pdf/{{ template.pdf }}" target="_blank"></a></h2>
+                <img src="images/pdf/{{ template.preview }}" >
+            </span>
         </div>
     </div>
 </div>

@@ -11,6 +11,5 @@
         var vm = this;
         //vm.category = category.data;
         //vm.templates = templates;
-        console.log(sports);
     }
 })();

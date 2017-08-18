@@ -1,19 +1,14 @@
 <div class="header-image">
-    <img src="images/{{ vm.sport.header }}" class="main-img">
+    <img src="images/{{ vm.sport.header }}" class="img-back">
+    <img src="images/{{ vm.sport.image_name }}" class="img-front">
 </div>
 
 <ul class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li class="active">Sport</li>
+    <li><a href="/">HOME</a></li>
+    <li class="active">{{ vm.sport.name }}</li>
 </ul>
 
 <div class="content">
-    <p class="page-detail">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vestibulum lobortis, risus quis luctus vehicula, neque diam iaculis erat, at laoreet lacus turpis eget velit. 
-        Pellentesque vitae auctor massa. Suspendisse posuere vitae turpis id pretium. 
-        Sed eget dui et risus maximus ultricies eget nec sapien. Nam hendrerit varius sem, eget tincidunt odio. 
-    </p>
     <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12 col-image"
                 ng-repeat="line in vm.lines">

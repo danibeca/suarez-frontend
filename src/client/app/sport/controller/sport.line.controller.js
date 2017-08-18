@@ -11,6 +11,5 @@
         var vm = this;
         vm.sport = sport.data;
         vm.lines = lines;
-        console.log(vm.lines);
     }
 })();

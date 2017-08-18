@@ -94,6 +94,9 @@
                             return Restangular.service('templates', 
                                                             Restangular.one('categories', $stateParams.category_id))
                                                         .getList();
+                        },
+                        category: function (Restangular, $stateParams) {
+                            return Restangular.one('categories', $stateParams.category_id).get();
                         }
                     }
                 }
