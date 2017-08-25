@@ -50,6 +50,17 @@
                         },
                         lines: function (Restangular, $stateParams) {
                             return Restangular.service('lines', Restangular.one('sports', $stateParams.id)).getList();
+                        },
+                        linesLength: function (Restangular, $stateParams) {
+                            var list = Restangular.service('lines',
+                                Restangular.one('sports', $stateParams.id))
+                                .getList();
+                            var lengthPromise = list.get('length');
+
+                            return lengthPromise.then(function (length) {
+                                return length;
+                            });
+
                         }
                     }
                 }
@@ -67,10 +78,10 @@
                             return translateHelper.addParts('home');
                         },
                         categories: function (Restangular, $stateParams) {
-                            return Restangular.service('categories', 
-                                                            Restangular.one('sports', $stateParams.sport_id)
-                                                                        .one('lines', $stateParams.line_id))
-                                                        .getList();
+                            return Restangular.service('categories',
+                                Restangular.one('sports', $stateParams.sport_id)
+                                    .one('lines', $stateParams.line_id))
+                                .getList();
                         },
                         line: function (Restangular, $stateParams) {
                             return Restangular.one('lines', $stateParams.line_id).get();
@@ -91,9 +102,9 @@
                             return translateHelper.addParts('home');
                         },
                         templates: function (Restangular, $stateParams) {
-                            return Restangular.service('templates', 
-                                                            Restangular.one('categories', $stateParams.category_id))
-                                                        .getList();
+                            return Restangular.service('templates',
+                                Restangular.one('categories', $stateParams.category_id))
+                                .getList();
                         },
                         category: function (Restangular, $stateParams) {
                             return Restangular.one('categories', $stateParams.category_id).get();
@@ -147,9 +158,9 @@
                             return translateHelper.addParts('home');
                         },
                         products: function (Restangular, $stateParams) {
-                            return Restangular.service('products', 
-                                                            Restangular.one('lines', $stateParams.line_id))
-                                                        .getList();
+                            return Restangular.service('products',
+                                Restangular.one('lines', $stateParams.line_id))
+                                .getList();
                         }
                     }
                 }
