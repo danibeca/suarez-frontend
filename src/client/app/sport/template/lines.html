@@ -10,8 +10,9 @@
 
 <div class="content">
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12 col-image"
-                ng-repeat="line in vm.lines">
+        <div ng-repeat="line in vm.lines"
+            ng-class="$index < vm.regular ?  vm.regular_col_md : vm.special_col_md"
+                class="col-sm-6 col-xs-12 col-image">
             <div ui-sref="sports/lines/categories({sport_id: '{{ line.sport.id }}', line_id: '{{ line.id }}'})" 
                  class="pointer image-holder" 
                  style="background-image: url(images/{{ line.image }})">
