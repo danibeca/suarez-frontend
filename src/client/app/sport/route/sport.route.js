@@ -51,11 +51,13 @@
                         lines: function (Restangular, $stateParams) {
                             return Restangular.service('lines', Restangular.one('sports', $stateParams.id)).getList();
                         },
-                        linesLength: function (Restangular, $stateParams, $q) {
-                            var list = Restangular.service('lines', Restangular.one('sports', $stateParams.id)).getList();
-                            var lengthPromise = list.get("length");
+                        linesLength: function (Restangular, $stateParams) {
+                            var list = Restangular.service('lines',
+                                Restangular.one('sports', $stateParams.id))
+                                .getList();
+                            var lengthPromise = list.get('length');
 
-                            return lengthPromise.then(function(length) {
+                            return lengthPromise.then(function (length) {
                                 return length;
                             });
 
