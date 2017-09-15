@@ -5,13 +5,14 @@
 
 <ul class="breadcrumb">
     <li><a href="/">HOME</a></li>
+    <li><a ui-sref="sports">Sports</a></li>
     <li class="active">{{ vm.sport.name }}</li>
 </ul>
 
 <div class="content">
     <div class="row">
         <div ng-repeat="line in vm.lines"
-            ng-class="$index < vm.regular ?  vm.regular_col_md : vm.special_col_md"
+                ng-class="$index < vm.regular ?  vm.regularColMd : vm.specialColMd"
                 class="col-sm-6 col-xs-12 col-image">
             <div ui-sref="sports/lines/categories({sport_id: '{{ line.sport.id }}', line_id: '{{ line.id }}'})" 
                  class="pointer image-holder" 

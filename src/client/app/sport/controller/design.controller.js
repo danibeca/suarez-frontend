@@ -6,7 +6,7 @@
         .controller('DesignController', DesignController);
 
     /* @ngInject */
-    function DesignController(sports) {
+    function DesignController() {
         /*jshint unused:false*/
         var vm = this;
         //vm.category = category.data;

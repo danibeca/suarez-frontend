@@ -5,6 +5,7 @@
 
 <ul class="breadcrumb">
     <li><a href="/">HOME</a></li>
+    <li><a ui-sref="sports">Sports</a></li>
     <li><a href="#">SPORT</a></li>
     <li class="active">{{ vm.line.name }}</li>
 </ul>
@@ -17,8 +18,9 @@
         Sed eget dui et risus maximus ultricies eget nec sapien. Nam hendrerit varius sem, eget tincidunt odio. 
     </p>
     <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12 col-image"
-                ng-repeat="category in vm.categories">
+        <div ng-repeat="category in vm.categories" 
+                ng-class="$index < vm.regular ?  vm.regularColMd : vm.specialColMd"
+                class="col-sm-6 col-xs-12 col-image">
             <div ui-sref="sports/lines/categories/templates({ category_id: '{{ category.id }}' })" 
                  class="pointer image-holder image-holder-short" 
                  style="background-image: url(images/{{ category.image }})">

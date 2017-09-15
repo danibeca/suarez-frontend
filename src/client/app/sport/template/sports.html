@@ -1,15 +1,18 @@
 <div class="header-image">
     <img src="images/sports.jpg" class="main-img">
+    
 </div>
 
 <ul class="breadcrumb">
     <li><a href="/">HOME</a></li>
+    
 </ul>
 
 <div class="content">
     <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12 col-image"
-                ng-repeat="sport in vm.sports">
+        <div ng-repeat="sport in vm.sports"
+                ng-class="$index < vm.regular ?  vm.regularColMd : vm.specialColMd"
+                class="col-sm-6 col-xs-12 col-image">
             <div ui-sref="sports/lines({id: '{{ sport.id }}'})" 
                  class="pointer image-holder" 
                  style="background-image: url(images/{{ sport.image }})">

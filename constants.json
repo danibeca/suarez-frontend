@@ -1,7 +1,7 @@
 {
   "local": {
     "environmentConfig": {
-      "api": "http://app.suarezclothing.com/api"
+      "api": "http://localhost/suarez/custom/api"
     }
   },
   "production": {

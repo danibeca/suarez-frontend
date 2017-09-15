@@ -102,9 +102,9 @@
                             return translateHelper.addParts('home');
                         },
                         templates: function (Restangular, $stateParams) {
-                            return Restangular.service('templates',
-                                Restangular.one('categories', $stateParams.category_id))
-                                .getList();
+                            return Restangular.service('templates', 
+                                                Restangular.one('categories', $stateParams.category_id))
+                                            .getList();
                         },
                         category: function (Restangular, $stateParams) {
                             return Restangular.one('categories', $stateParams.category_id).get();
@@ -113,19 +113,64 @@
                 }
             },
             {
-                state: 'designs',
+                state: 'inspiration',
                 config: {
-                    url: '/designs',
-                    templateUrl: 'app/sport/template/designs.html',
-                    controller: 'DesignController',
+                    url: '/inspiration',
+                    templateUrl: 'app/sport/template/inspiration.html',
+                    controller: 'InspirationController',
                     controllerAs: 'vm',
-                    title: 'designs',
+                    title: 'inspiration',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        }
+                    }
+                }
+            },
+            {
+                state: 'semicustom',
+                config: {
+                    url: '/semicustom',
+                    templateUrl: 'app/sport/template/semicustom.html',
+                    controller: 'SemicustomController',
+                    controllerAs: 'vm',
+                    title: 'semicustom',
                     resolve: {
                         translations: function (translateHelper) {
                             return translateHelper.addParts('home');
                         },
                         sports: function (Restangular) {
                             return Restangular.all('sports').getList();
+                        }
+                    }
+                }
+            },
+            {
+                state: 'styleguide',
+                config: {
+                    url: '/styleguide',
+                    templateUrl: 'app/sport/template/styleguide.html',
+                    controller: 'StyleguideController',
+                    controllerAs: 'vm',
+                    title: 'styleguide',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
+                        }
+                    }
+                }
+            },
+            {
+                state: 'design',
+                config: {
+                    url: '/design',
+                    templateUrl: 'app/sport/template/design.html',
+                    controller: 'DesignController',
+                    controllerAs: 'vm',
+                    title: 'design',
+                    resolve: {
+                        translations: function (translateHelper) {
+                            return translateHelper.addParts('home');
                         }
                     }
                 }

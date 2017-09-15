@@ -16,88 +16,53 @@
         function columns(total) {
             /* COLUMNS */
 
-            var regular_col_md = 0;
-            var special_col_md = 0;
+            var regularColMd = 0;
+            var specialColMd = 0;
             var regular = 0;
             var special = 0;
-            var div_3 = parseInt(total / 3);
-            var res_3 = total % 3;
-            var div_4 = parseInt(total / 4);
-            var res_4 = total % 4;
+            var div3 = parseInt(total / 3);
+            var res3 = total % 3;
+            var div4 = parseInt(total / 4);
+            var res4 = total % 4;
+            var aux;
 
-            if(total === 1){
-                regular_col_md = 'col-md-6';
+            if (total === 1) {
+                regularColMd = 'col-md-6';
                 regular = 1;
             }
-            else if(total === 2){
-                regular_col_md = 'col-md-6';
+            else if (total === 2) {
+                regularColMd = 'col-md-6';
                 regular = 2;
             }
-            else if(res_4 === 0){
-                regular_col_md = 'col-md-3';
+            else if (res4 === 0) {
+                regularColMd = 'col-md-3';
                 regular = total;
             }
-            else if(res_3 === 0){
-                regular_col_md = 'col-md-4';
+            else if (res3 === 0) {
+                regularColMd = 'col-md-4';
                 regular = total;
             }
-            else if(res_3 > res_4){ // Ej: 5
-                regular = div_3*3;
-                special = res_3;
-                regular_col_md = 'col-md-4';
-                special_col_md = 'col-md-'+12/res_3;
+            else if (res3 > res4) {
+                regular = div3 * 3;
+                special = res3;
+                regularColMd = 'col-md-4';
+                aux = 12 / res3;
+                specialColMd = 'col-md-' + aux;
             }
-            else { // 10 Ej: 10
-                regular = div_4*4;
-                special = res_4;
-                regular_col_md = 'col-md-3';
-                special_col_md = 'col-md-'+12/res_4;
+            else {
+                regular = div4 * 4;
+                special = res4;
+                regularColMd = 'col-md-3';
+                aux = 12 / res4;
+                specialColMd = 'col-md-' + aux;
             }
 
             return {
                 'regular': regular,
                 'special': special,
-                'regular_col_md': regular_col_md,
-                'special_col_md': special_col_md
+                'regularColMd': regularColMd,
+                'specialColMd': specialColMd
             };
-
-            /*
-            var rows = 1;                           // Number of regular rows
-            var colsRows = 0;                      // Col width in regular rows
-            var colsRowFinal = 0;                 // Col width in final row
-            var rowsCol4 = parseInt(total / 3);      // Number of regular rows if cols width is 4
-            var residueCol4 = parseInt(total) % 3;   // Residue if cols width is 4
-            var rowsCol3 = parseInt(total / 4);      // Number of regular rows if cols width is 3
-            var residueCol3 = parseInt(total) % 4;   // Residue if cols width is 3
-
-            if (total < 5) {
-                colsRows = 12 / total;
-                rows = 1;
-            }
-            else if (residueCol4 === 0) {
-                colsRows = 4;
-                rows = rowsCol4;
-            }
-            else if (residueCol3 === 0) {
-                colsRows = 3;
-                rows = rowsCol3;
-            }
-            else if (residueCol4 > residueCol3) {
-                colsRows = 4;
-                rows = rowsCol4;
-                colsRowFinal = columns(residueCol4);
-            }
-            else {
-                colsRows = 3;
-                rows = rowsCol3;
-                colsRowFinal = columns(residueCol3);
-            }
-
-            return {
-                'rows': rows,
-                'cols_rows': colsRows,
-                'cols_row_final': colsRowFinal
-            };*/
         }
     }
 })();
