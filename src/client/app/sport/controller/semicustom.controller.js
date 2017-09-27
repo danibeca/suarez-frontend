@@ -6,10 +6,10 @@
         .controller('SemicustomController', SemicustomController);
 
     /* @ngInject */
-    function SemicustomController(sports) {
+    function SemicustomController(designs) {
         /*jshint unused:false*/
         var vm = this;
-        //vm.category = category.data;
-        //vm.templates = templates;
+        console.log(designs);
+        vm.designs = designs;
     }
 })();

@@ -139,8 +139,10 @@
                         translations: function (translateHelper) {
                             return translateHelper.addParts('home');
                         },
-                        sports: function (Restangular) {
-                            return Restangular.all('sports').getList();
+                        designs: function (Restangular) {
+                            return Restangular.service('designs', 
+                                                Restangular.one('style-guides', 0))
+                                            .getList();
                         }
                     }
                 }
