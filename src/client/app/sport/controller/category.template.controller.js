@@ -12,5 +12,6 @@
         vm.category = category.data;
         vm.templates = templates;
         console.log(templates);
+        console.log(category.data);
     }
 })();

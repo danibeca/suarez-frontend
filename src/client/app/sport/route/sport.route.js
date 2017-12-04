@@ -77,6 +77,9 @@
                         translations: function (translateHelper) {
                             return translateHelper.addParts('home');
                         },
+                        sport: function (Restangular, $stateParams) {
+                            return Restangular.one('sports', $stateParams.sport_id).get();
+                        },
                         categories: function (Restangular, $stateParams) {
                             return Restangular.service('categories',
                                 Restangular.one('sports', $stateParams.sport_id)
